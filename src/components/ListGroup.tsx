@@ -1,12 +1,13 @@
 function ListGroup() {
-    const listItems = ['City1', 'City2', ' City3', 'City4', 'City5'];
+    let listItems = [] as string[];
+    //listItems = ['City1', 'City2', ' City3', 'City4', 'City5'];
   return (
     <>
         <h1>List Group</h1>
         <ul className="list-group">
-            {listItems.map((item, index) => (
+            {listItems.length>0 ? listItems.map((item, index) => (
                 <li key={index} className="list-group-item">{item}</li>
-            ))}
+            )) : <li className="list-group-item">No items</li>}
         </ul>
     </>
   );
