@@ -3,9 +3,16 @@ import { MouseEvent } from "react";
 function ListGroup() {
     let listItems = [] as string[];
     listItems = ['City1', 'City2', ' City3', 'City4', 'City5'];
+    let selectedIndex = -1;
 
     const handleClick = (event: MouseEvent) => {
-        console.log(event);}
+        if (selectedIndex > -1) {
+            document.querySelector('.active')?.classList.remove('active');
+        }
+        selectedIndex = listItems.indexOf(event.currentTarget.textContent as string
+        );
+        event.currentTarget.classList.add('active');
+    }
 
   return (
     <>
